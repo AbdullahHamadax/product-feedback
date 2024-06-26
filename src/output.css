@@ -911,3 +911,7 @@ video {
 .hover\:bg-add_feedback_button_hover:hover{
   background-color: var(--add-feedback-button-hover);
 }
+
+.hover\:bg-feedback_tag_card_hover:hover{
+  background-color: var(--feedback-tag-card-hover);
+}
