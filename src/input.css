@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #f2f4ff;
+    --sidebar: #4661e6;
+    --feedback-title: ##3a4374;
+  }
+}
