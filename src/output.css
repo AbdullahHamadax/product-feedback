@@ -977,3 +977,7 @@ video {
 .hover\:bg-feedback_tag_card_hover:hover{
   background-color: var(--feedback-tag-card-hover);
 }
+
+.hover\:underline:hover{
+  text-decoration-line: underline;
+}
