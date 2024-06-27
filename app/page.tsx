@@ -2,11 +2,11 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background_body font-jost">
+    <main className="min-h-screen bg-background_body font-jost ">
       <div className="flex items-center justify-between h-[4.5rem] bg-cover bg-[url('/assets/suggestions/mobile/background-header.png')] p-4">
-        <h1 className="text-white font-bold text-md">
+        <h1 className="font-bold text-white text-md">
           Frontend Mentor <br />
-          <span className="text-header_faded font-normal">Feedback Board</span>
+          <span className="font-normal text-header_faded">Feedback Board</span>
         </h1>
         <Sheet>
           <SheetTrigger asChild>
@@ -22,34 +22,34 @@ export default function Home() {
             <div className=" w-[16.938rem] h-[37.188rem] gap-7 absolute right-0 top-[4.5rem] flex flex-col items-center justify-center">
               <div className="bg-white w-[13.938rem] h-[11.125rem] rounded-lg flex flex-wrap gap-3 p-5 text-center">
                 <button className="bg-background_body w-[3rem] h-[1.875rem] rounded-xl">
-                  <p className="text-feedback_tag font-bold">All</p>
+                  <p className="font-bold text-feedback_tag">All</p>
                 </button>
                 <button className="bg-background_body w-[3rem] h-[1.875rem] rounded-xl">
-                  <p className="text-feedback_tag font-bold">UI</p>
+                  <p className="font-bold text-feedback_tag">UI</p>
                 </button>
                 <button className="bg-background_body w-[3rem] h-[1.875rem] rounded-xl">
-                  <p className="text-feedback_tag font-bold">UX</p>
+                  <p className="font-bold text-feedback_tag">UX</p>
                 </button>
                 <button className="bg-background_body w-[6.938rem] h-[1.875rem] rounded-xl">
-                  <p className="text-feedback_tag font-bold">Enhancement</p>
+                  <p className="font-bold text-feedback_tag">Enhancement</p>
                 </button>
                 <button className="bg-background_body w-[3.5rem] h-[1.875rem] rounded-xl">
-                  <p className="text-feedback_tag font-bold">Bug</p>
+                  <p className="font-bold text-feedback_tag">Bug</p>
                 </button>
                 <button className="bg-background_body w-[4.813rem] h-[1.875rem] rounded-xl">
-                  <p className="text-feedback_tag font-bold">Feature</p>
+                  <p className="font-bold text-feedback_tag">Feature</p>
                 </button>
               </div>
               <div className="bg-white w-[13.938rem] h-[11.125rem] rounded-lg">
-                <div className="flex p-6 justify-between items-center">
-                  <h1 className="text-feedback_title font-bold text-xl">
+                <div className="flex items-center justify-between p-6">
+                  <h1 className="text-xl font-bold text-feedback_title">
                     Roadmap
                   </h1>
-                  <a href="#" className="text-feedback_tag underline font-bold">
+                  <a href="#" className="font-bold underline text-feedback_tag">
                     View
                   </a>
                 </div>
-                <div className="flex justify-between items-center">
+                <div className="flex items-center justify-between">
                   <ul className="list-disc flex flex-col justify-center items-start ml-[2.8rem] text-feedback_paragraph">
                     <li className="marker:text-list_orange">
                       <p>Planned</p>
@@ -75,7 +75,7 @@ export default function Home() {
       <div className="bg-suggestions_bar w-screen h-[3.5rem] flex items-center text-sm justify-between p-4 text-white">
         <p className="flex items-center gap-2">
           Sort by :
-          <span className="font-semibold flex items-center justify-center gap-2">
+          <span className="flex items-center justify-center gap-2 font-semibold">
             Most Upvotes
             <img
               src="assets/shared/icon-arrow-down.svg"
@@ -91,31 +91,31 @@ export default function Home() {
       <div className="flex flex-col items-center justify-center gap-4 p-7">
         <div className="bg-white w-[20.438rem] h-[12.5rem] rounded-lg p-5">
           <div className="flex flex-col gap-2">
-            <h1 className="text-feedback_title font-bold">
+            <h1 className="font-bold text-feedback_title">
               Add tags for solutions
             </h1>
             <p className="text-feedback_paragraph text-sm font-normal w-[40ch]">
               Easier to search for solutions based on a specific stack.
             </p>
 
-            <div className="bg-background-body w-[6.938rem] h-[1.875rem] flex items-center justify-center rounded-[0.55rem]">
-              <p className="text-feedback_tag font-bold text-sm">Enhancement</p>
+            <div className="bg-background_body w-[6.938rem] h-[1.875rem] flex items-center justify-center rounded-[0.55rem]">
+              <p className="text-sm font-bold text-feedback_tag">Enhancement</p>
             </div>
           </div>
           <div className="flex items-center justify-between mt-5">
-            <div className="bg-feedback_upvote w-[4.313rem] h-[2rem] rounded-[0.55rem] cursor-pointer hover:bg-background-body_hover flex items-center justify-center gap-3">
+            <div className="bg-feedback_upvote w-[4.313rem] h-[2rem] rounded-[0.55rem]  flex items-center justify-center gap-3 cursor-pointer hover:bg-feedback_tag_card_hover">
               <img src="assets/shared/icon-arrow-up.svg" alt="arrow up icon" />
-              <p className="text-feedback_title font-bold">112</p>
+              <p className="font-bold text-feedback_title">112</p>
             </div>
             <div className="flex items-center justify-center gap-3">
               <img src="assets/shared/icon-comments.svg" alt="comments icon" />
-              <p className="text-feedback_title font-bold">2</p>
+              <p className="font-bold text-feedback_title">2</p>
             </div>
           </div>
         </div>
         <div className="bg-white w-[20.438rem] h-[12.5rem] rounded-lg p-5">
           <div className="flex flex-col gap-2">
-            <h1 className="text-feedback_title font-bold">
+            <h1 className="font-bold text-feedback_title">
               Add a dark theme option
             </h1>
             <p className="text-feedback_paragraph text-sm font-normal w-[35ch]">
@@ -123,114 +123,114 @@ export default function Home() {
               mode.
             </p>
 
-            <div className="bg-background-body w-[4.813rem] h-[1.875rem] flex items-center justify-center rounded-[0.55rem]">
-              <p className="text-feedback_tag font-bold text-sm">Feature</p>
+            <div className="bg-background_body w-[4.813rem] h-[1.875rem] flex items-center justify-center rounded-[0.55rem]">
+              <p className="text-sm font-bold text-feedback_tag">Feature</p>
             </div>
           </div>
           <div className="flex items-center justify-between mt-5">
-            <div className="bg-feedback_upvote w-[4.313rem] h-[2rem] rounded-[0.55rem] flex items-center justify-center gap-3 cursor-pointer hover:bg-background-body_hover">
+            <div className="bg-feedback_upvote w-[4.313rem] h-[2rem] rounded-[0.55rem] flex items-center justify-center gap-3 cursor-pointer hover:bg-feedback_tag_card_hover">
               <img src="assets/shared/icon-arrow-up.svg" alt="arrow up icon" />
-              <p className="text-feedback_title font-bold">99</p>
+              <p className="font-bold text-feedback_title">99</p>
             </div>
             <div className="flex items-center justify-center gap-3">
               <img src="assets/shared/icon-comments.svg" alt="comments icon" />
-              <p className="text-feedback_title font-bold">4</p>
+              <p className="font-bold text-feedback_title">4</p>
             </div>
           </div>
         </div>
         <div className="bg-white w-[20.438rem] h-[12.5rem] rounded-lg p-5">
           <div className="flex flex-col gap-2">
-            <h1 className="text-feedback_title font-bold">
+            <h1 className="font-bold text-feedback_title">
               Q&A within the challenge hubs
             </h1>
             <p className="text-feedback_paragraph text-sm font-normal w-[40ch]">
               Challenge-specific Q&A would make for easy reference.
             </p>
 
-            <div className="bg-background-body w-[4.813rem] h-[1.875rem] flex items-center justify-center rounded-[0.55rem]">
-              <p className="text-feedback_tag font-bold text-sm">Feature</p>
+            <div className="bg-background_body w-[4.813rem] h-[1.875rem] flex items-center justify-center rounded-[0.55rem]">
+              <p className="text-sm font-bold text-feedback_tag">Feature</p>
             </div>
           </div>
           <div className="flex items-center justify-between mt-5">
-            <div className="bg-feedback_upvote w-[4.313rem] h-[2rem] rounded-[0.55rem] flex items-center justify-center gap-3 cursor-pointer hover:bg-background-body_hover">
+            <div className="bg-feedback_upvote w-[4.313rem] h-[2rem] rounded-[0.55rem] flex items-center justify-center gap-3 cursor-pointer hover:bg-feedback_tag_card_hover">
               <img src="assets/shared/icon-arrow-up.svg" alt="arrow up icon" />
-              <p className="text-feedback_title font-bold">65</p>
+              <p className="font-bold text-feedback_title">65</p>
             </div>
             <div className="flex items-center justify-center gap-3">
               <img src="assets/shared/icon-comments.svg" alt="comments icon" />
-              <p className="text-feedback_title font-bold">2</p>
+              <p className="font-bold text-feedback_title">2</p>
             </div>
           </div>
         </div>
         <div className="bg-white w-[20.438rem] h-[12.5rem] rounded-lg p-5">
           <div className="flex flex-col gap-2">
-            <h1 className="text-feedback_title font-bold">
+            <h1 className="font-bold text-feedback_title">
               Allow image/video upload
             </h1>
             <p className="text-feedback_paragraph text-sm font-normal w-[37ch]">
               Images and screencasts can enhance comments on solutions.
             </p>
 
-            <div className="bg-background-body w-[6.938rem] h-[1.875rem] flex items-center justify-center rounded-[0.55rem]">
-              <p className="text-feedback_tag font-bold text-sm">Enhancement</p>
+            <div className="bg-background_body w-[6.938rem] h-[1.875rem] flex items-center justify-center rounded-[0.55rem]">
+              <p className="text-sm font-bold text-feedback_tag">Enhancement</p>
             </div>
           </div>
           <div className="flex items-center justify-between mt-5">
-            <div className="bg-feedback_upvote w-[4.313rem] h-[2rem] rounded-[0.55rem] flex items-center justify-center gap-3 cursor-pointer hover:bg-background-body_hover">
+            <div className="bg-feedback_upvote w-[4.313rem] h-[2rem] rounded-[0.55rem] flex items-center justify-center gap-3 cursor-pointer hover:bg-feedback_tag_card_hover">
               <img src="assets/shared/icon-arrow-up.svg" alt="arrow up icon" />
-              <p className="text-feedback_title font-bold">51</p>
+              <p className="font-bold text-feedback_title">51</p>
             </div>
             <div className="flex items-center justify-center gap-3">
               <img src="assets/shared/icon-comments.svg" alt="comments icon" />
-              <p className="text-feedback_title font-bold">2</p>
+              <p className="font-bold text-feedback_title">2</p>
             </div>
           </div>
         </div>
         <div className="bg-white w-[20.438rem] h-[12.5rem] rounded-lg p-5">
           <div className="flex flex-col gap-2">
-            <h1 className="text-feedback_title font-bold">
+            <h1 className="font-bold text-feedback_title">
               Ability to follow others
             </h1>
             <p className="text-feedback_paragraph text-sm font-normal w-[35ch]">
               Stay updated on comments and solutions other people post.
             </p>
 
-            <div className="bg-background-body w-[4.813rem] h-[1.875rem] flex items-center justify-center rounded-[0.55rem]">
-              <p className="text-feedback_tag font-bold text-sm">Feature</p>
+            <div className="bg-background_body w-[4.813rem] h-[1.875rem] flex items-center justify-center rounded-[0.55rem]">
+              <p className="text-sm font-bold text-feedback_tag">Feature</p>
             </div>
           </div>
           <div className="flex items-center justify-between mt-5">
-            <div className="bg-feedback_upvote w-[4.313rem] h-[2rem] rounded-[0.55rem] flex items-center justify-center gap-3 cursor-pointer hover:bg-background-body_hover">
+            <div className="bg-feedback_upvote w-[4.313rem] h-[2rem] rounded-[0.55rem] flex items-center justify-center gap-3 cursor-pointer hover:bg-feedback_tag_card_hover">
               <img src="assets/shared/icon-arrow-up.svg" alt="arrow up icon" />
-              <p className="text-feedback_title font-bold">42</p>
+              <p className="font-bold text-feedback_title">42</p>
             </div>
             <div className="flex items-center justify-center gap-3">
               <img src="assets/shared/icon-comments.svg" alt="comments icon" />
-              <p className="text-feedback_title font-bold">3</p>
+              <p className="font-bold text-feedback_title">3</p>
             </div>
           </div>
         </div>
         <div className="bg-white w-[20.438rem] h-[12.5rem] rounded-lg p-5">
           <div className="flex flex-col gap-2">
-            <h1 className="text-feedback_title font-bold">
+            <h1 className="font-bold text-feedback_title">
               Preview images not loading
             </h1>
             <p className="text-feedback_paragraph text-sm font-normal w-[40ch]">
               Challenge preview images are missing when you apply a filter.
             </p>
 
-            <div className="bg-background-body w-[3.5rem] h-[1.875rem] flex items-center justify-center rounded-[0.55rem]">
-              <p className="text-feedback_tag font-bold text-sm">Bug</p>
+            <div className="bg-background_body w-[3.5rem] h-[1.875rem] flex items-center justify-center rounded-[0.55rem]">
+              <p className="text-sm font-bold text-feedback_tag">Bug</p>
             </div>
           </div>
           <div className="flex items-center justify-between mt-5">
-            <div className="bg-feedback_upvote w-[4.313rem] h-[2rem] rounded-[0.55rem] flex items-center justify-center gap-3 cursor-pointer hover:bg-background-body_hover">
+            <div className="bg-feedback_upvote w-[4.313rem] h-[2rem] rounded-[0.55rem] flex items-center justify-center gap-3 cursor-pointer hover:bg-feedback_tag_card_hover">
               <img src="assets/shared/icon-arrow-up.svg" alt="arrow up icon" />
-              <p className="text-feedback_title font-bold">3</p>
+              <p className="font-bold text-feedback_title">3</p>
             </div>
             <div className="flex items-center justify-center gap-3">
               <img src="assets/shared/icon-comments.svg" alt="comments icon" />
-              <p className="text-feedback_title font-bold opacity-35">0</p>
+              <p className="font-bold text-feedback_title opacity-35">0</p>
             </div>
           </div>
         </div>
@@ -242,10 +242,10 @@ export default function Home() {
             src="assets/suggestions/illustration-empty.svg"
             alt="detective searching for something"
           />
-          <h1 className="text-feedback_title font-extrabold mt-6">
+          <h1 className="mt-6 font-extrabold text-feedback_title">
             There is no feedback yet.
           </h1>
-          <p className="text-feedback_paragraph text-sm">
+          <p className="text-sm text-feedback_paragraph">
             Got a suggestion? Found a bug that needs to be squashed? We love
             hearing about new ideas to improve our app.
           </p>

@@ -1,13 +1,13 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -17,7 +17,7 @@ const config = {
         "2xl": "1400px",
       },
     },
-  
+
     extend: {
       colors: {
         border: "hsl(var(--border))",
@@ -63,10 +63,10 @@ const config = {
         feedback_tag_card_hover: "var(--feedback-tag-card-hover)",
         add_feedback_button: "var(--add-feedback-button)",
         add_feedback_button_hover: "var(--add-feedback-button-hover)",
+        edit_feedback_button_hover: "var(--edit-feedback-button-hover)",
         header_faded: "var(--header-faded)",
         list_orange: "var(--list-orange)",
         list_cyan: "var(--list-cyan)",
-
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -87,10 +87,12 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
-      
+      fontFamily: {
+        jost: ["Jost"],
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;

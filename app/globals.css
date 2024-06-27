@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -44,6 +46,7 @@
     --feedback-tag-card-hover: #cfd7ff;
     --add-feedback-button: #ad1fea;
     --add-feedback-button-hover: #c75af6;
+    --edit-feedback-button-hover: #7c91f9;
     --header-faded: #dcdefc;
     --list-orange: #f49f85;
     --list-cyan: #62bcfa;
