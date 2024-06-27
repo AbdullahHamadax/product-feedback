@@ -1,0 +1,52 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum CategoryType {
+  FEATURE
+  BUG
+  ENHANCEMENT
+}
+
+enum UpdateStatus {
+  PLANNED
+  INPROGRESS
+  LIVE
+}
+
+model Feedback{
+  id  String @id @default(uuid()) 
+  userId String @unique
+  title String
+  detail String @db.Text
+  status UpdateStatus @default(PLANNED)
+  category CategoryType @default(FEATURE)
+  upvotes Int @default(0)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  comments Comment[]
+}
+
+model Comment{
+  id  String @id @default(uuid()) 
+  userId String @unique
+  text String @db.VarChar(250)
+
+  createdAt DateTime @default(now())
+
+  feedbackId String
+  feedback Feedback @relation(fields: [feedbackId], references: [id], onDelete: Cascade)
+}
