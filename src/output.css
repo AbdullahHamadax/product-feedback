@@ -459,6 +459,7 @@ video {
   --feedback-tag-card-hover: #cfd7ff;
   --add-feedback-button: #ad1fea;
   --add-feedback-button-hover: #c75af6;
+  --edit-feedback-button-hover: #7c91f9;
   --header-faded: #dcdefc;
   --list-orange: #f49f85;
   --list-cyan: #62bcfa;
@@ -588,12 +589,20 @@ video {
   z-index: -1;
 }
 
+.ml-6{
+  margin-left: 1.5rem;
+}
+
 .ml-\[2\.8rem\]{
   margin-left: 2.8rem;
 }
 
 .mr-\[1\.5rem\]{
   margin-right: 1.5rem;
+}
+
+.mt-3{
+  margin-top: 0.75rem;
 }
 
 .mt-5{
@@ -624,6 +633,10 @@ video {
   height: 12.5rem;
 }
 
+.h-\[14\.625rem\]{
+  height: 14.625rem;
+}
+
 .h-\[2\.5rem\]{
   height: 2.5rem;
 }
@@ -652,6 +665,14 @@ video {
   height: 4.5rem;
 }
 
+.h-\[52\.313rem\]{
+  height: 52.313rem;
+}
+
+.h-\[5rem\]{
+  height: 5rem;
+}
+
 .min-h-screen{
   min-height: 100vh;
 }
@@ -666,6 +687,14 @@ video {
 
 .w-\[16\.938rem\]{
   width: 16.938rem;
+}
+
+.w-\[17\.438rem\]{
+  width: 17.438rem;
+}
+
+.w-\[2\.5rem\]{
+  width: 2.5rem;
 }
 
 .w-\[20\.438rem\]{
@@ -702,6 +731,10 @@ video {
 
 .w-\[6\.938rem\]{
   width: 6.938rem;
+}
+
+.w-\[7\.438rem\]{
+  width: 7.438rem;
 }
 
 .w-\[8\.375rem\]{
@@ -764,12 +797,20 @@ video {
   gap: 1.25rem;
 }
 
+.gap-6{
+  gap: 1.5rem;
+}
+
 .gap-7{
   gap: 1.75rem;
 }
 
 .rounded-\[0\.55rem\]{
   border-radius: 0.55rem;
+}
+
+.rounded-full{
+  border-radius: 9999px;
 }
 
 .rounded-lg{
@@ -788,6 +829,10 @@ video {
   background-color: var(--background-body);
 }
 
+.bg-feedback_tag{
+  background-color: var(--feedback-tag);
+}
+
 .bg-feedback_upvote{
   background-color: var(--feedback-upvote);
 }
@@ -799,6 +844,10 @@ video {
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.p-1{
+  padding: 0.25rem;
 }
 
 .p-4{
@@ -825,6 +874,11 @@ video {
   font-family: Jost;
 }
 
+.text-lg{
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 .text-sm{
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -849,6 +903,10 @@ video {
 
 .font-semibold{
   font-weight: 600;
+}
+
+.text-add_feedback_button{
+  color: var(--add-feedback-button);
 }
 
 .text-feedback_paragraph{
@@ -910,6 +968,10 @@ video {
 
 .hover\:bg-add_feedback_button_hover:hover{
   background-color: var(--add-feedback-button-hover);
+}
+
+.hover\:bg-edit_feedback_button_hover:hover{
+  background-color: var(--edit-feedback-button-hover);
 }
 
 .hover\:bg-feedback_tag_card_hover:hover{

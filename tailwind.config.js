@@ -13,6 +13,7 @@ module.exports = {
         feedback_tag_card_hover: "var(--feedback-tag-card-hover)",
         add_feedback_button: "var(--add-feedback-button)",
         add_feedback_button_hover: "var(--add-feedback-button-hover)",
+        edit_feedback_button_hover: "var(--edit-feedback-button-hover)",
         header_faded: "var(--header-faded)",
         list_orange: "var(--list-orange)",
         list_cyan: "var(--list-cyan)",
