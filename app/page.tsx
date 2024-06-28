@@ -2,6 +2,10 @@ import { FeedbackList } from "@/components/feedback/feedback-list";
 import { Sidebar } from "@/components/sidebar";
 import Link from "next/link";
 
+import Image from "next/image";
+
+import ArrowDownIcon from "@/public/assets/shared/icon-arrow-down-white.svg";
+
 export default function Home() {
   return (
     <main className="min-h-screen font-jost">
@@ -17,10 +21,7 @@ export default function Home() {
           Sort by :
           <span className="flex items-center justify-center gap-2 font-semibold">
             Most Upvotes
-            <img
-              src="assets/shared/icon-arrow-down.svg"
-              alt="arrow down icon"
-            />
+            <Image src={ArrowDownIcon} alt="arrow down icon" />
           </span>
         </p>
         <Link

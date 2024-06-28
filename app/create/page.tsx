@@ -30,6 +30,13 @@ import { ToastAction } from "@/components/ui/toast";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
+import Image from "next/image";
+
+import ArrowLeftIcon from "@/public/assets/shared/icon-arrow-left.svg";
+import NewFeedbackIcon from "@/public/assets/shared/icon-new-feedback.svg";
+
+import { Plus } from "lucide-react";
+
 export default function addFeed() {
   const { toast } = useToast();
   const router = useRouter();
@@ -62,21 +69,17 @@ export default function addFeed() {
     <main className="min-h-screen font-jost flex items-start justify-center">
       <div className="flex flex-col items-center w-full justify-center m-8">
         <Link
-          className="w-full flex flex-row items-center justify-start "
+          className="w-full flex flex-row items-center justify-start gap-2 "
           href={"/"}
         >
-          <img
-            src="/assets/shared/icon-arrow-left.svg"
-            className="mr-2"
-            alt="Arrow Left Icon"
-          />
-          <p>Go Back</p>
+          <Image src={ArrowLeftIcon} className="mr-2" alt="Arrow left icon" />
+          <p className="font-bold text-feedback_paragraph">Go Back</p>
         </Link>
-        <div className="bg-white max-w-screen-sm p-4 rounded-lg flex flex-col items-stretch justify-start mt-6 ">
-          <img
-            className="-mt-10 size-12"
-            src="assets/shared/icon-new-feedback.svg"
-            alt="arrow plus icon"
+        <div className="bg-white max-w-screen-sm p-4 rounded-lg flex flex-col items-stretch justify-start mt-14">
+          <Image
+            className="-mt-10 size-10"
+            src={NewFeedbackIcon}
+            alt="Arrow plus icon"
           />
           <h1 className="mt-6 mb-6 font-extrabold text-feedback_title">
             Create New Feedback
@@ -98,6 +101,7 @@ export default function addFeed() {
                       <Input
                         className="w-full bg-[#F7F8FD] border-0"
                         {...field}
+                        placeholder="Like add x feature "
                       />
                     </FormControl>
 
@@ -158,6 +162,7 @@ export default function addFeed() {
                       <Textarea
                         className="w-full border-0 bg-[#F7F8FD] "
                         {...field}
+                        placeholder="Type your comments here"
                       />
                     </FormControl>
 
