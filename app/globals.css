@@ -50,6 +50,7 @@
     --header-faded: #dcdefc;
     --list-orange: #f49f85;
     --list-cyan: #62bcfa;
+    --roadmap-items-not-checked: #abb0c7;
   }
 
   .dark {
