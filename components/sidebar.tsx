@@ -18,7 +18,7 @@ export const Sidebar = () => {
         <div className=" w-[16.938rem] h-[37.188rem] gap-7 absolute right-0 top-[4.5rem] flex flex-col items-center justify-center">
           <div className="bg-white w-[13.938rem] h-[11.125rem] rounded-lg flex flex-wrap gap-3 p-5 text-center">
             {catogories.map((catogory) => (
-              <button className="bg-background_body rounded-xl">
+              <button key={catogory} className="bg-background_body rounded-xl">
                 <p className="font-bold text-feedback_tag p-2">{catogory}</p>
               </button>
             ))}

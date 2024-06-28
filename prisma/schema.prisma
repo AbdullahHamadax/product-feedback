@@ -27,7 +27,7 @@ enum UpdateStatus {
 
 model Feedback{
   id  String @id @default(uuid()) 
-  userId String @unique
+  userId String
   title String
   detail String @db.Text
   status UpdateStatus @default(PLANNED)
