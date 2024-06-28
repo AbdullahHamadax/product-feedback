@@ -67,6 +67,7 @@ const config = {
         header_faded: "var(--header-faded)",
         list_orange: "var(--list-orange)",
         list_cyan: "var(--list-cyan)",
+        roadmap_items_not_checked: "var(--roadmap-items-not-checked)",
       },
       borderRadius: {
         lg: "var(--radius)",
