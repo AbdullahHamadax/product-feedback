@@ -1,3 +1,7 @@
+import { Textarea} from "@/components/ui/textarea";
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -187,17 +191,7 @@
       </div>
     </div>
 
-    <!-- Add upvotes -->
-    <!-- Add title -->
-    <!-- Add description -->
-    <!-- Add category -->
-    <!-- Add comments -->
 
-    <!-- Add number of comments + subcomments -->
-
-    <!-- Add name -->
-    <!-- Add username -->
-    <!-- Add comment -->
   </body>
   <html></html>
 </html>
