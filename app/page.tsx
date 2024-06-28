@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background_body font-jost ">
+    <main className="min-h-screen font-jost">
       <div className="flex items-center justify-between h-[4.5rem] bg-cover bg-[url('/assets/suggestions/mobile/background-header.png')] p-4">
         <h1 className="font-bold text-white text-md">
           Frontend Mentor <br />
@@ -31,7 +31,10 @@ export default function Home() {
         </Link>
       </div>
 
-      <div className="flex flex-col items-center justify-center gap-4 p-7">
+      <div
+        className="flex flex-col items-center justify-center gap-4 p-7"
+        id="mainview"
+      >
         <FeedbackList />
       </div>
     </main>

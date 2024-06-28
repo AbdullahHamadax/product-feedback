@@ -59,7 +59,7 @@ export default function addFeed() {
   };
 
   return (
-    <main className="min-h-screen bg-background_body font-jost flex items-start justify-center">
+    <main className="min-h-screen font-jost flex items-start justify-center">
       <div className="flex flex-col items-center w-full justify-center m-8">
         <Link
           className="w-full flex flex-row items-center justify-start "
@@ -172,9 +172,11 @@ export default function addFeed() {
                 >
                   Add Feedback
                 </Button>
-                <Button className="w-full bg-[#3A4374] hover:bg-[#505994] rounded-lg">
-                  Cancel
-                </Button>
+                <Link href={"/"}>
+                  <Button className="w-full bg-[#3A4374] hover:bg-[#505994] rounded-lg">
+                    Cancel
+                  </Button>
+                </Link>
               </div>
             </form>
           </Form>

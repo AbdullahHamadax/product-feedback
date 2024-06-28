@@ -19,7 +19,9 @@ export const Sidebar = () => {
           <div className="bg-white w-[13.938rem] h-[11.125rem] rounded-lg flex flex-wrap gap-3 p-5 text-center">
             {catogories.map((catogory) => (
               <button key={catogory} className="bg-background_body rounded-xl">
-                <p className="font-bold text-feedback_tag p-2">{catogory}</p>
+                <p className="font-bold text-feedback_tag py-2 px-4">
+                  {catogory}
+                </p>
               </button>
             ))}
           </div>
