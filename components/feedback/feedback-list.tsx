@@ -31,13 +31,15 @@ export const FeedbackList = async () => {
     </div>
   ) : (
     feedbacks.map((feedback: Feedback) => (
-      <FeedbackItem
-        key={feedback.id}
-        title={feedback.title}
-        details={feedback.detail}
-        catogory={feedback.category}
-        votes={feedback.upvotes}
-      ></FeedbackItem>
+      <Link href={"/details/" + feedback.id}>
+        <FeedbackItem
+          key={feedback.id}
+          title={feedback.title}
+          details={feedback.detail}
+          catogory={feedback.category}
+          votes={feedback.upvotes}
+        ></FeedbackItem>
+      </Link>
     ))
   );
 };

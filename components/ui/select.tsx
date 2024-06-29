@@ -3,8 +3,10 @@
 import * as React from "react";
 import * as SelectPrimitive from "@radix-ui/react-select";
 import { Check, ChevronDown, ChevronUp } from "lucide-react";
+import ArrowDownIcon from "@/public/assets/shared/icon-arrow-down.svg";
 
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 const Select = SelectPrimitive.Root;
 

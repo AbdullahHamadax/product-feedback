@@ -34,10 +34,9 @@ import Image from "next/image";
 
 import ArrowLeftIcon from "@/public/assets/shared/icon-arrow-left.svg";
 import NewFeedbackIcon from "@/public/assets/shared/icon-new-feedback.svg";
+import { GoBackButton } from "@/components/go-back-button";
 
-import { Plus } from "lucide-react";
-
-export default function editFeed() {
+export default function addFeed() {
   const { toast } = useToast();
   const router = useRouter();
 
@@ -68,13 +67,7 @@ export default function editFeed() {
   return (
     <main className="min-h-screen font-jost flex items-start justify-center">
       <div className="flex flex-col items-center w-full justify-center m-8">
-        <Link
-          className="w-full flex flex-row items-center justify-start gap-2 "
-          href={"/"}
-        >
-          <Image src={ArrowLeftIcon} className="mr-2" alt="Arrow left icon" />
-          <p className="font-bold text-feedback_paragraph">Go Back</p>
-        </Link>
+        <GoBackButton />
         <div className="bg-white max-w-screen-sm p-4 rounded-lg flex flex-col items-stretch justify-start mt-14">
           <Image
             className="-mt-10 size-10"
