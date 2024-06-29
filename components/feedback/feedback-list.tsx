@@ -12,12 +12,12 @@ export const FeedbackList = async () => {
 
   return feedbacks.length === 0 ? (
     <div className="flex flex-col items-center justify-center">
-      <div className="bg-white w-[20.438rem] h-[28.75rem] flex flex-col items-center justify-center text-center gap-5">
+      <div className="bg-white w-[20.438rem] h-[28.75rem] md:w-[43.063rem] md:h-[37.5rem] rounded-lg flex flex-col items-center justify-center text-center gap-5 md:gap-6">
         <Image src={DetectiveIcon} alt="Detective searching for something" />
         <h1 className="mt-6 font-extrabold text-feedback_title">
           There is no feedback yet.
         </h1>
-        <p className="text-sm text-feedback_paragraph">
+        <p className="text-sm text-feedback_paragraph md:max-w-[45ch]">
           Got a suggestion? Found a bug that needs to be squashed? We love
           hearing about new ideas to improve our app.
         </p>
