@@ -8,6 +8,10 @@ import { cn } from "@/lib/utils";
 
 const Select = SelectPrimitive.Root;
 
+import Image from "next/image";
+
+import ArrowDownIcon from "@/public/assets/shared/icon-arrow-down.svg";
+
 const SelectGroup = SelectPrimitive.Group;
 
 const SelectValue = SelectPrimitive.Value;

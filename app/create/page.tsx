@@ -77,7 +77,7 @@ export default function addFeed() {
         </Link>
         <div className="bg-white  md:w-[33.75rem] h-[41.063rem] p-8 rounded-lg flex flex-col items-stretch justify-start mt-14">
           <Image
-            className="-mt-10 size-10"
+            className="-mt-12 size-10"
             src={NewFeedbackIcon}
             alt="Arrow plus icon"
           />
@@ -178,7 +178,7 @@ export default function addFeed() {
                   Add Feedback
                 </Button>
                 <Link href={"/"}>
-                  <Button className="md:w-[5.813rem] md:h-[2.75rem] bg-[#3A4374] hover:bg-[#505994] rounded-lg">
+                  <Button className="md:w-[5.813rem] md:h-[2.75rem] w-full bg-[#3A4374] hover:bg-[#505994] rounded-lg">
                     Cancel
                   </Button>
                 </Link>
