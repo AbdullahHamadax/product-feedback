@@ -16,7 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className + "font-jost"}>{children}</body>
+      <body className={inter.className + "font-jost bg-background_body"}>
+        {children}
+      </body>
     </html>
   );
 }
