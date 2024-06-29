@@ -2,6 +2,10 @@ import { FeedbackItem } from "@/components/feedback/feedback-item";
 import { Textarea } from "@/components/ui/textarea";
 import { db } from "@/lib/db";
 import { redirect } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
+import ArrowLeftIcon from "@/public/assets/shared/icon-arrow-left.svg";
+import { GoBackButton } from "@/components/go-back-button";
 
 interface FeedbackIdProp {
   params: {
@@ -20,19 +24,16 @@ export default async function feedbackDetails({ params }: FeedbackIdProp) {
 
   return (
     <div className="flex flex-col gap-5">
-      <div className="flex justify-between p-1 mt-3">
+      <div className="flex justify-between m-8 ">
         <div className="flex items-center gap-4">
-          <img
-            src="../assets/shared/icon-arrow-left.svg"
-            alt="arrow left icon"
-          />
-          <p className="font-bold text-feedback_paragraph hover:underline">
-            Go Back
-          </p>
+          <GoBackButton />
         </div>
-        <button className="bg-feedback_tag w-[7.438rem] h-[2.5rem] text-white font-bold rounded-xl text-sm hover:bg-edit_feedback_button_hover">
+        <Link
+          href={"/edit/" + params.feedbackId}
+          className="flex items-center justify-center bg-feedback_tag w-[7.438rem] h-[2.5rem] text-white font-bold rounded-xl text-sm hover:bg-edit_feedback_button_hover"
+        >
           Edit Feedback
-        </button>
+        </Link>
       </div>
 
       <div className="flex flex-col items-center gap-6">
