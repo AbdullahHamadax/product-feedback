@@ -9,6 +9,7 @@ import {
   SignedOut,
   UserButton,
 } from "@clerk/nextjs";
+import { cn } from "@/lib/utils";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,8 +26,8 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={inter.className + "font-jost bg-background_body"}>
-          <main>{children}</main>
+        <body className={cn(inter.className, "font-jost bg-background_body")}>
+          <main className="h-full">{children}</main>
         </body>
       </html>
     </ClerkProvider>
