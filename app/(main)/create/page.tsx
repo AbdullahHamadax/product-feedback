@@ -68,9 +68,9 @@ export default function addFeed() {
     <main className="min-h-screen font-jost flex items-start justify-center">
       <div className="flex flex-col items-center w-full justify-center m-8">
         <GoBackButton />
-        <div className="bg-white max-w-screen-sm p-4 rounded-lg flex flex-col items-stretch justify-start mt-14">
+        <div className="bg-white md:w-[33.75rem] h-[41.063rem] p-8  rounded-lg flex flex-col items-stretch justify-start mt-14">
           <Image
-            className="-mt-10 size-10"
+            className="-mt-12 size-10 "
             src={NewFeedbackIcon}
             alt="Arrow plus icon"
           />
@@ -92,7 +92,7 @@ export default function addFeed() {
                     </FormDescription>
                     <FormControl>
                       <Input
-                        className="w-full bg-[#F7F8FD] border-0"
+                        className="md:w-[28.5rem] md:h-[3rem] bg-[#F7F8FD] border-0"
                         {...field}
                         placeholder="Like add x feature "
                       />
@@ -118,7 +118,7 @@ export default function addFeed() {
                         onValueChange={field.onChange}
                         defaultValue={field.value}
                       >
-                        <SelectTrigger className="w-full bg-[#F7F8FD] border-0 capitalize">
+                        <SelectTrigger className="md:w-[28.5rem] md:h-[3rem] bg-[#F7F8FD] border-0 capitalize">
                           <SelectValue />
                         </SelectTrigger>
                         <SelectContent>
@@ -153,7 +153,7 @@ export default function addFeed() {
                     </FormDescription>
                     <FormControl>
                       <Textarea
-                        className="w-full border-0 bg-[#F7F8FD] "
+                        className="md:w-[28.5rem] md:h-[3rem] border-0 bg-[#F7F8FD] "
                         {...field}
                         placeholder="Type your comments here"
                       />
@@ -163,15 +163,15 @@ export default function addFeed() {
                   </FormItem>
                 )}
               />
-              <div className="flex flex-col gap-y-4">
+              <div className="flex flex-col gap-y-4 md:flex-row-reverse md:gap-4 md:mr-5">
                 <Button
-                  className="w-full bg-add_feedback_button hover:bg-add_feedback_button_hover rounded-lg"
+                  className="md:w-[9rem] md:h-[2.75rem] bg-add_feedback_button hover:bg-add_feedback_button_hover rounded-lg"
                   type="submit"
                 >
                   Add Feedback
                 </Button>
                 <Link href={"/"}>
-                  <Button className="w-full bg-[#3A4374] hover:bg-[#505994] rounded-lg">
+                  <Button className="md:w-[5.813rem] md:h-[2.75rem] w-full bg-[#3A4374] hover:bg-[#505994] rounded-lg">
                     Cancel
                   </Button>
                 </Link>
