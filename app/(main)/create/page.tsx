@@ -70,7 +70,7 @@ export default function addFeed() {
         <GoBackButton />
         <div className="bg-white md:w-[33.75rem] h-[41.063rem] p-8  rounded-lg flex flex-col items-stretch justify-start mt-14">
           <Image
-            className="-mt-12 size-10 "
+            className="mt-[-3.2rem] size-10 "
             src={NewFeedbackIcon}
             alt="Arrow plus icon"
           />
