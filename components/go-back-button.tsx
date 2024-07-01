@@ -10,7 +10,7 @@ export const GoBackButton = () => {
 
   return (
     <div
-      className="w-full flex flex-row items-center justify-start hover:underline"
+      className="w-full flex flex-row items-center justify-start hover:underline cursor-pointer"
       onClick={() => router.back()}
     >
       <Image src={ArrowLeftIcon} className="mr-2" alt="Arrow left icon" />

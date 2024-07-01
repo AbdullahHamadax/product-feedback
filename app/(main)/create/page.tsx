@@ -70,7 +70,7 @@ export default function AddFeed() {
         <GoBackButton />
         <div className="bg-white md:w-[33.75rem] h-[41.063rem] p-8  rounded-lg flex flex-col items-stretch justify-start mt-14">
           <Image
-            className="-mt-12 size-10 "
+            className="mt-[-3.2rem] size-10 "
             src={NewFeedbackIcon}
             alt="Arrow plus icon"
           />
@@ -153,7 +153,7 @@ export default function AddFeed() {
                     </FormDescription>
                     <FormControl>
                       <Textarea
-                        className="md:w-[28.5rem] md:h-[3rem] border-0 bg-[#F7F8FD] "
+                        className="md:w-[28.5rem] md:h-[6rem] border-0 bg-[#F7F8FD] resize-none"
                         {...field}
                         placeholder="Type your comments here"
                       />
