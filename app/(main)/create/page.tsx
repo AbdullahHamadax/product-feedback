@@ -153,7 +153,7 @@ export default function addFeed() {
                     </FormDescription>
                     <FormControl>
                       <Textarea
-                        className="md:w-[28.5rem] md:h-[3rem] border-0 bg-[#F7F8FD] "
+                        className="md:w-[28.5rem] md:h-[6rem] border-0 bg-[#F7F8FD] resize-none"
                         {...field}
                         placeholder="Type your comments here"
                       />
