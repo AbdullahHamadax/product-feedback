@@ -6,8 +6,11 @@ import Image from "next/image";
 
 import ArrowDownIcon from "@/public/assets/shared/icon-arrow-down-white.svg";
 import SuggestionsIcon from "@/public/assets/suggestions/icon-suggestions.svg";
+import { initialProfile } from "@/lib/create-profile";
 
-export default function Home() {
+export default async function Home() {
+  const profile = await initialProfile();
+
   return (
     <main className="md:flex md:flex-col md:items-center min-h-screen w-screen md:p-6 bg-background_body font-jost ">
       <div className="flex items-center justify-between bg-cover bg-[url('/assets/suggestions/mobile/background-header.png')] h-[4.5rem] p-4">

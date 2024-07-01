@@ -6,8 +6,14 @@ import ArrowUpIcon from "@/public/assets/shared/icon-arrow-up.svg";
 import CommentsIcon from "@/public/assets/shared/icon-comments.svg";
 import { Arrow } from "@radix-ui/react-select";
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import { upvoteFeedback } from "@/actions/feedback";
+import { useToast } from "@/components/ui/use-toast";
+import { ToastAction } from "@/components/ui/toast";
+import { useRouter } from "next/navigation";
 
 interface FeedbackItemProp {
+  id: string;
   title: string;
   details: string;
   catogory: string;
@@ -15,12 +21,17 @@ interface FeedbackItemProp {
 }
 
 export const FeedbackItem = ({
+  id,
   title,
   details,
   catogory,
   votes,
 }: FeedbackItemProp) => {
+  const [upvotes, setUpvotes] = useState(votes);
+
   const [isDesktop, setDesktop] = useState(false);
+  const { toast } = useToast();
+
   const updateWindow = () => setDesktop(window.innerWidth > 640);
 
   useEffect(() => {
@@ -28,12 +39,34 @@ export const FeedbackItem = ({
     return () => window.removeEventListener("resize", updateWindow);
   });
 
+  const upvote = async () => {
+    console.log("hello");
+    const response = await upvoteFeedback(id);
+    if (response?.error) {
+      console.log(response.error);
+
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: response.error,
+        action: <ToastAction altText="Try again">Try again</ToastAction>,
+      });
+    }
+
+    if (response?.success) {
+      setUpvotes(upvotes + 1);
+    }
+  };
+
   if (isDesktop)
     return (
-      <div className="flex flex-row bg-white rounded-lg p-5 gap-x-4">
-        <div className="bg-feedback_upvote rounded-[0.55rem] flex items-center justify-center gap-3 cursor-pointer hover:bg-feedback_tag_card_hover">
+      <div className="flex flex-row justify-start h-42 bg-white rounded-lg p-5 gap-x-4">
+        <div
+          onClick={() => upvote()}
+          className="bg-feedback_upvote p-2 rounded-[0.55rem] h-16 flex items-center justify-center cursor-pointer hover:bg-feedback_tag_card_hover"
+        >
           <Image src={ArrowUpIcon} alt="arrow up icon" />
-          <p className="font-bold text-feedback_title">{votes}</p>
+          <p className="font-bold text-feedback_title">{upvotes}</p>
         </div>
 
         <div className="flex flex-col gap-2">
@@ -48,10 +81,12 @@ export const FeedbackItem = ({
             </p>
           </div>
         </div>
-        <div className="flex items-center justify-center gap-3">
-          <Image src={CommentsIcon} alt="comments icon" />
-          <p className="font-bold text-feedback_title">0</p>
-        </div>
+        <Link href={"/details/" + id}>
+          <div className="flex items-center justify-center gap-3">
+            <Image src={CommentsIcon} alt="comments icon" />
+            <p className="font-bold text-feedback_title">0</p>
+          </div>
+        </Link>
       </div>
     );
   else
@@ -59,16 +94,30 @@ export const FeedbackItem = ({
       <div className="bg-white w-[20.438rem] h-[12.5rem] rounded-lg p-5">
         <div className="flex flex-col gap-2">
           <h1 className="font-bold text-feedback_title">{title}</h1>
-          <p className="text-feedback_paragraph text-sm font-normal w-[40ch]"></p>
-        </div>
-        <div className="flex items-center justify-between mt-5">
-          <div className="bg-feedback_upvote w-[4.313rem] h-[2rem] rounded-[0.55rem]  flex items-center justify-center gap-3 cursor-pointer hover:bg-feedback_tag_card_hover">
-            <Image src={ArrowUpIcon} alt="arrow up icon" />
+          <p className="text-feedback_paragraph text-sm font-normal w-[40ch]">
+            {details}
+          </p>
+
+          <div className="bg-background_body w-[6.938rem] h-[1.875rem] flex items-center justify-center rounded-[0.55rem]">
+            <p className="text-sm font-bold text-feedback_tag capitalize">
+              {catogory.toLocaleLowerCase()}
+            </p>
           </div>
         </div>
-        <div className="flex items-center justify-center gap-3">
-          <Image src={CommentsIcon} alt="comments icon" />
-          <p className="font-bold text-feedback_title">0</p>
+        <div className="flex items-center justify-between mt-5">
+          <div
+            onClick={() => upvote()}
+            className="bg-feedback_upvote w-[4.313rem] h-[2rem] rounded-[0.55rem]  flex items-center justify-center gap-3 cursor-pointer hover:bg-feedback_tag_card_hover"
+          >
+            <Image src={ArrowUpIcon} alt="arrow up icon" />
+            <p className="font-bold text-feedback_title">{upvotes}</p>
+          </div>
+          <Link href={"/details/" + id}>
+            <div className="flex items-center justify-center gap-3">
+              <Image src={CommentsIcon} alt="comments icon" />
+              <p className="font-bold text-feedback_title">0</p>
+            </div>
+          </Link>
         </div>
       </div>
     );

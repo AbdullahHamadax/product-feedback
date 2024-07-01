@@ -38,11 +38,11 @@ model Feedback{
   updatedAt DateTime @updatedAt
 
   comments Comment[]
+  upvotesList Upvote[]
 }
 
 model Comment{
   id  String @id @default(uuid()) 
-  userId String @unique
   text String @db.VarChar(250)
 
   createdAt DateTime @default(now())
@@ -50,17 +50,30 @@ model Comment{
   feedbackId String
   feedback Feedback @relation(fields: [feedbackId], references: [id], onDelete: Cascade)
 
-  // profileId String 
-  // profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  profileId String 
+  profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
 
 }
 
+model Profile {
+  id String @id @default(uuid()) 
+  userId String @unique
+  name String
+  imageUrl String
 
-// model Profile {
-//   id String @id @default(uuid()) 
-//   userId String @unique
-//   name String
-//   imageUrl String @db.Text
+  comments Comment[]
+  upvotes Upvote[]
+}
 
-//   comments Comment[]
-// }
+model Upvote {
+  id String @id @default(uuid())
+  profileId String
+  profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  
+  feedbackId String
+  feedback Feedback @relation(fields: [feedbackId], references: [id], onDelete: Cascade)
+  
+  createdAt DateTime @default(now())
+  
+  @@unique([profileId, feedbackId])
+}

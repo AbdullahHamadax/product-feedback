@@ -2,6 +2,7 @@
 
 import { db } from "@/lib/db";
 import { feedbackFormSchema } from "@/lib/types";
+import { currentUser } from "@clerk/nextjs/server";
 import { error } from "console";
 import { redirect } from "next/navigation";
 import { z } from "zod";
@@ -105,21 +106,83 @@ export async function deleteFeedback(id : string) {
 
 export async function upvoteFeedback(id : string) {
   
+  const user = await currentUser();
+
+  if(!user)
+    return {error : "user doesn't exist"}
+
 
   try{
-    const result = await db.feedback.delete({
+
+    const profile = await db.profile.findUnique({
       where: {
-        id: id
-      },
+          userId: user?.id
+      }
+      });
+
+    if(!profile)
+      return {error : "unauthorized"}
+
+    const result = await db.$transaction(async (tx) => {
+
+     
+      const existingUpvote = await tx.upvote.findUnique({
+        where: {
+          profileId_feedbackId: {
+            profileId: profile.id,
+            feedbackId: id,
+          },
+        },
+      });
+
+      if(existingUpvote) {
+        await tx.upvote.delete({
+          where: {
+            id: existingUpvote.id,
+          },
+        });
+
+        const updatedFeedback = await tx.feedback.update({
+          where: {
+            id: id,
+          },
+          data: {
+            upvotes: {
+              decrement: 1,
+            },
+          },
+        });
+        return updatedFeedback.upvotes;
+      }
+      else {
+        await tx.upvote.create({
+          data: {
+            profileId: profile.id,
+            feedbackId: id,
+          },
+        });
+
+        const updatedFeedback = await tx.feedback.update({
+          where: {
+            id: id,
+          },
+          data: {
+            upvotes: {
+              increment: 1,
+            },
+          },
+        });
+
+        return updatedFeedback.upvotes
+      }
+
     })
-    // redirect('/home')
 
     return {success : "Feedback deleted successfully"}
 
   } catch(error) {
     console.log(error)
     return {error : "Internal server error"}
-
   }
 
 }
