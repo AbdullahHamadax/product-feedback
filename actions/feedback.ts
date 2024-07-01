@@ -102,3 +102,24 @@ export async function deleteFeedback(id : string) {
   }
 
 }
+
+export async function upvoteFeedback(id : string) {
+  
+
+  try{
+    const result = await db.feedback.delete({
+      where: {
+        id: id
+      },
+    })
+    // redirect('/home')
+
+    return {success : "Feedback deleted successfully"}
+
+  } catch(error) {
+    console.log(error)
+    return {error : "Internal server error"}
+
+  }
+
+}
