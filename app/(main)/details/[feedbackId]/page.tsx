@@ -23,7 +23,7 @@ export default async function feedbackDetails({ params }: FeedbackIdProp) {
   if (!feedback) redirect("/");
 
   return (
-    <div className="flex flex-col gap-5 md:gap-0">
+    <div className="flex flex-col gap-5 md:gap-0 font-jost">
       <div className="flex justify-between m-8 mb-5 ">
         <div className="flex items-center gap-4">
           <GoBackButton />
@@ -111,7 +111,7 @@ export default async function feedbackDetails({ params }: FeedbackIdProp) {
 
           <p className="mt-3 ml-6 text-sm font-normal text-feedback_paragraph">
             <span className="font-bold text-add_feedback_button">
-              @hummingbird1
+              @hummingbird1 ‎
             </span>
             While waiting for dark mode, there are browser extensions that will
             also do the job. Search for "dark theme” followed by your browser.
@@ -137,7 +137,7 @@ export default async function feedbackDetails({ params }: FeedbackIdProp) {
 
           <p className="mt-3 ml-6 text-sm font-normal text-feedback_paragraph">
             <span className="font-bold text-add_feedback_button">
-              @annev1990
+              @annev1990 ‎
             </span>
             Good point! Using any kind of style extension is great and can be
             highly customizable, like the ability to change contrast and
