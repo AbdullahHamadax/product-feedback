@@ -36,7 +36,7 @@ import ArrowLeftIcon from "@/public/assets/shared/icon-arrow-left.svg";
 import NewFeedbackIcon from "@/public/assets/shared/icon-new-feedback.svg";
 import { GoBackButton } from "@/components/go-back-button";
 
-export default function addFeed() {
+export default function AddFeed() {
   const { toast } = useToast();
   const router = useRouter();
 

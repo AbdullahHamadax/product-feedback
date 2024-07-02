@@ -38,6 +38,7 @@ export default async function feedbackDetails({ params }: FeedbackIdProp) {
 
       <div className="flex flex-col items-center gap-6">
         <FeedbackItem
+          id={feedback.id}
           title={feedback.title}
           details={feedback.detail}
           catogory={feedback.category}

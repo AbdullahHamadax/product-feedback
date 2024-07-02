@@ -38,94 +38,42 @@ model Feedback{
   updatedAt DateTime @updatedAt
 
   comments Comment[]
+  upvotesList Upvote[]
 }
 
 model Comment{
   id  String @id @default(uuid()) 
-  userId String @unique
   text String @db.VarChar(250)
 
   createdAt DateTime @default(now())
 
   feedbackId String
   feedback Feedback @relation(fields: [feedbackId], references: [id], onDelete: Cascade)
+
+  profileId String 
+  profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+
 }
 
+model Profile {
+  id String @id @default(uuid()) 
+  userId String @unique
+  name String
+  imageUrl String
 
+  comments Comment[]
+  upvotes Upvote[]
+}
 
-
-model User {
-  id            String          @id @default(cuid())
-  name          String?
-  username      String?         @unique
-  email         String?         @unique
-  emailVerified DateTime?
-  image         String?
-  Session       Session[]
-  Account       Account?
-  // Optional for WebAuthn support
-  Authenticator Authenticator[]
- 
+model Upvote {
+  id String @id @default(uuid())
+  profileId String
+  profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  
+  feedbackId String
+  feedback Feedback @relation(fields: [feedbackId], references: [id], onDelete: Cascade)
+  
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
- 
-model Account {
-  id                       String  @id @default(cuid())
-  userId                   String  @unique
-  type                     String
-  provider                 String
-  providerAccountId        String
-  refresh_token            String? @db.Text
-  access_token             String? @db.Text
-  expires_at               Int?
-  token_type               String?
-  scope                    String?
-  id_token                 String? @db.Text
-  session_state            String?
-  refresh_token_expires_in Int?
-  user                     User?   @relation(fields: [userId], references: [id])
- 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
- 
-  @@unique([provider, providerAccountId])
-  @@index([userId])
-}
- 
-model Session {
-  id           String   @id @default(cuid())
-  sessionToken String   @unique
-  userId       String
-  expires      DateTime
-  user         User     @relation(fields: [userId], references: [id])
- 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
- 
-  @@index([userId])
-}
- 
-model VerificationToken {
-  identifier String
-  token      String
-  expires    DateTime
- 
-  @@unique([identifier, token])
-}
- 
-// Optional for WebAuthn support
-model Authenticator {
-  credentialID         String  @unique
-  userId               String
-  providerAccountId    String
-  credentialPublicKey  String
-  counter              Int
-  credentialDeviceType String
-  credentialBackedUp   Boolean
-  transports           String?
- 
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
- 
-  @@id([userId, credentialID])
+  
+  @@unique([profileId, feedbackId])
 }
