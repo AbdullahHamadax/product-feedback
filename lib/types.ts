@@ -1,9 +1,8 @@
-import { CategoryType } from "@prisma/client";
-import { z } from "zod";
+import { FeedbackEdit } from "@/components/feedback/feedback-edit";
+import { Feedback } from "@prisma/client";
 
-export const feedbackFormSchema = z.object({
-  title: z.string().min(4).max(128),
-  detail: z.string().max(250),
-  catogory: z.nativeEnum(CategoryType),
-});
+interface FeedbackWithUpvoteStatus extends Feedback {
+  upvoted: boolean;
+}
 
+export default FeedbackWithUpvoteStatus

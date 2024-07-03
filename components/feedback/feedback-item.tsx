@@ -4,13 +4,12 @@ import Image from "next/image";
 
 import ArrowUpIcon from "@/public/assets/shared/icon-arrow-up.svg";
 import CommentsIcon from "@/public/assets/shared/icon-comments.svg";
-import { Arrow } from "@radix-ui/react-select";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { upvoteFeedback } from "@/actions/feedback";
 import { useToast } from "@/components/ui/use-toast";
 import { ToastAction } from "@/components/ui/toast";
-import { useRouter } from "next/navigation";
+import { UpvoteButton } from "./upvote-button";
 
 interface FeedbackItemProp {
   id: string;
@@ -18,6 +17,7 @@ interface FeedbackItemProp {
   details: string;
   catogory: string;
   votes: number;
+  votedOn: boolean;
 }
 
 export const FeedbackItem = ({
@@ -26,8 +26,10 @@ export const FeedbackItem = ({
   details,
   catogory,
   votes,
+  votedOn,
 }: FeedbackItemProp) => {
   const [upvotes, setUpvotes] = useState(votes);
+  const [votedOnState, setVotedOnState] = useState(votedOn);
 
   const [isDesktop, setDesktop] = useState(false);
   const { toast } = useToast();
@@ -40,7 +42,11 @@ export const FeedbackItem = ({
   });
 
   const upvote = async () => {
-    console.log("hello");
+    if (votedOnState) setUpvotes(upvotes - 1);
+    else setUpvotes(upvotes + 1);
+
+    setVotedOnState(!votedOnState);
+
     const response = await upvoteFeedback(id);
     if (response?.error) {
       console.log(response.error);
@@ -54,20 +60,28 @@ export const FeedbackItem = ({
     }
 
     if (response?.success) {
-      setUpvotes(upvotes + 1);
+      console.log(response.votes);
+      // setUpvotes(response.votes.votes);
+      // setVotedOnState(response.votes.upvoted);
     }
   };
 
   if (isDesktop)
     return (
       <div className="flex flex-row justify-start h-42 bg-white rounded-lg p-5 gap-x-4">
-        <div
+        <UpvoteButton
+          votes={upvotes}
+          votedOn={votedOnState}
+          onUpvote={upvote}
+        ></UpvoteButton>
+
+        {/* <div
           onClick={() => upvote()}
           className="bg-feedback_upvote p-2 rounded-[0.55rem] h-16 flex items-center justify-center cursor-pointer hover:bg-feedback_tag_card_hover"
         >
           <Image src={ArrowUpIcon} alt="arrow up icon" />
           <p className="font-bold text-feedback_title">{upvotes}</p>
-        </div>
+        </div> */}
 
         <div className="flex flex-col gap-2">
           <h1 className="font-bold text-feedback_title">{title}</h1>
@@ -105,13 +119,12 @@ export const FeedbackItem = ({
           </div>
         </div>
         <div className="flex items-center justify-between mt-5">
-          <div
-            onClick={() => upvote()}
-            className="bg-feedback_upvote w-[4.313rem] h-[2rem] rounded-[0.55rem]  flex items-center justify-center gap-3 cursor-pointer hover:bg-feedback_tag_card_hover"
-          >
-            <Image src={ArrowUpIcon} alt="arrow up icon" />
-            <p className="font-bold text-feedback_title">{upvotes}</p>
-          </div>
+          <UpvoteButton
+            votes={upvotes}
+            votedOn={votedOnState}
+            onUpvote={upvote}
+          ></UpvoteButton>
+
           <Link href={"/details/" + id}>
             <div className="flex items-center justify-center gap-3">
               <Image src={CommentsIcon} alt="comments icon" />

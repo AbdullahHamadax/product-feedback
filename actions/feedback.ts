@@ -1,7 +1,7 @@
 "use server";
 
 import { db } from "@/lib/db";
-import { feedbackFormSchema } from "@/lib/types";
+import { feedbackFormSchema } from "@/lib/schemas";
 import { currentUser } from "@clerk/nextjs/server";
 import { error } from "console";
 import { redirect } from "next/navigation";
@@ -152,7 +152,7 @@ export async function upvoteFeedback(id : string) {
             },
           },
         });
-        return updatedFeedback.upvotes;
+        return {votes : updatedFeedback.upvotes, upvoted : false};
       }
       else {
         await tx.upvote.create({
@@ -173,12 +173,12 @@ export async function upvoteFeedback(id : string) {
           },
         });
 
-        return updatedFeedback.upvotes
+        return {votes : updatedFeedback.upvotes, upvoted : true}
       }
 
     })
 
-    return {success : "Feedback deleted successfully"}
+    return {success : "Feedback deleted successfully", votes : result}
 
   } catch(error) {
     console.log(error)

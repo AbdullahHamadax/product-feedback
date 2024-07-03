@@ -6,9 +6,45 @@ import Link from "next/link";
 import Image from "next/image";
 
 import DetectiveIcon from "@/public/assets/suggestions/illustration-empty.svg";
+import { auth, currentUser } from "@clerk/nextjs/server";
+import { initialProfile } from "@/lib/create-profile";
+import FeedbackWithUpvoteStatus from "@/lib/types";
 
 export const FeedbackList = async () => {
-  const feedbacks = await db.feedback.findMany();
+  // const feedbacks = await db.feedback.findMany();
+  const user = await currentUser();
+
+  if (!user) auth().redirectToSignIn();
+
+  let profile = await db.profile.findUnique({
+    where: {
+      userId: user?.id,
+    },
+  });
+
+  if (!profile) profile = await initialProfile();
+
+  const feedbacks = await db.feedback.findMany({
+    include: {
+      upvotesList: {
+        where: {
+          profileId: profile.id,
+        },
+        select: {
+          profileId: true,
+        },
+      },
+    },
+  });
+
+  const feedbacksWithUpvoteStatus: FeedbackWithUpvoteStatus[] = feedbacks.map(
+    (feedback) => ({
+      ...feedback,
+      upvoted: feedback.upvotesList.some(
+        (upvote) => upvote.profileId === profile.id
+      ),
+    })
+  );
 
   return feedbacks.length === 0 ? (
     <div className="flex flex-col items-center justify-center">
@@ -30,7 +66,7 @@ export const FeedbackList = async () => {
       </div>
     </div>
   ) : (
-    feedbacks.map((feedback: Feedback) => (
+    feedbacksWithUpvoteStatus.map((feedback: FeedbackWithUpvoteStatus) => (
       <FeedbackItem
         key={feedback.id}
         id={feedback.id}
@@ -38,6 +74,7 @@ export const FeedbackList = async () => {
         details={feedback.detail}
         catogory={feedback.category}
         votes={feedback.upvotes}
+        votedOn={feedback.upvoted}
       ></FeedbackItem>
     ))
   );
