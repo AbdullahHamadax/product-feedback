@@ -6,6 +6,10 @@ import Image from "next/image";
 import Link from "next/link";
 import ArrowLeftIcon from "@/public/assets/shared/icon-arrow-left.svg";
 import { GoBackButton } from "@/components/go-back-button";
+import ElijahMossImg from "@/public/assets/user-images/image-elijah.jpg";
+import JamesSkinnerImg from "@/public/assets/user-images/image-james.jpg";
+import AnneValentineImg from "@/public/assets/user-images/image-anne.jpg";
+import RyanWellesImg from "@/public/assets/user-images/image-ryan.jpg";
 
 interface FeedbackIdProp {
   params: {
@@ -49,8 +53,8 @@ export default async function feedbackDetails({ params }: FeedbackIdProp) {
           <p className="text-lg font-bold text-feedback_title">4 Comments</p>
           <div className="flex items-center justify-between">
             <div className="flex gap-4 mt-5">
-              <img
-                src="/assets/user-images/image-elijah.jpg"
+              <Image
+                src={ElijahMossImg}
                 alt="Elijah Moss"
                 className="w-[2.5rem] h-[2.5rem] rounded-full"
               />
@@ -72,8 +76,8 @@ export default async function feedbackDetails({ params }: FeedbackIdProp) {
           <hr className="mt-5" />
           <div className="flex items-center justify-between">
             <div className="flex gap-4 mt-5">
-              <img
-                src="../assets/user-images/image-james.jpg"
+              <Image
+                src={JamesSkinnerImg}
                 alt="James Skinner"
                 className="w-[2.5rem] h-[2.5rem] rounded-full"
               />
@@ -94,8 +98,8 @@ export default async function feedbackDetails({ params }: FeedbackIdProp) {
           </p>
           <div className="flex items-center justify-between ml-6">
             <div className="flex gap-4 mt-5">
-              <img
-                src="../assets/user-images/image-anne.jpg"
+              <Image
+                src={AnneValentineImg}
                 alt="Anne Valentine"
                 className="w-[2.5rem] h-[2.5rem] rounded-full"
               />
@@ -120,8 +124,8 @@ export default async function feedbackDetails({ params }: FeedbackIdProp) {
           </p>
           <div className="flex items-center justify-between ml-6">
             <div className="flex gap-4 mt-5">
-              <img
-                src="../assets/user-images/image-ryan.jpg"
+              <Image
+                src={RyanWellesImg}
                 alt="Ryan Welles "
                 className="w-[2.5rem] h-[2.5rem] rounded-full"
               />

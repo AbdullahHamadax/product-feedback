@@ -13,7 +13,7 @@ export const Sidebar = () => {
           <Image
             src={MenuIcon}
             alt="hamburger menu icon"
-            className="w-[1.25rem] h-[1.063rem] cursor-pointer"
+            className="w-[1.25rem] h-[1.063rem] cursor-pointer md:hidden"
           />
         </button>
       </SheetTrigger>

@@ -34,7 +34,7 @@ export const FeedbackItem = ({
   const [isDesktop, setDesktop] = useState(false);
   const { toast } = useToast();
 
-  const updateWindow = () => setDesktop(window.innerWidth > 640);
+  const updateWindow = () => setDesktop(window.innerWidth > 767);
 
   useEffect(() => {
     window.addEventListener("resize", updateWindow);
@@ -68,7 +68,7 @@ export const FeedbackItem = ({
 
   if (isDesktop)
     return (
-      <div className="flex flex-row justify-start h-42 bg-white rounded-lg p-5 gap-x-4">
+      <div className="flex flex-row justify-start items-center h-42 bg-white rounded-lg p-5 gap-x-4 md:w-[43.063rem] md:h-[9.438rem]">
         <UpvoteButton
           votes={upvotes}
           votedOn={votedOnState}
@@ -83,7 +83,7 @@ export const FeedbackItem = ({
           <p className="font-bold text-feedback_title">{upvotes}</p>
         </div> */}
 
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 ">
           <h1 className="font-bold text-feedback_title">{title}</h1>
           <p className="text-feedback_paragraph text-sm font-normal w-[40ch]">
             {details}
