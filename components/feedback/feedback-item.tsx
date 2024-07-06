@@ -68,7 +68,7 @@ export const FeedbackItem = ({
 
   if (isDesktop)
     return (
-      <div className="flex flex-row justify-start items-center h-42 bg-white rounded-lg p-5 gap-x-4 md:w-[43.063rem] md:h-[9.438rem]">
+      <div className="flex flex-row justify-between items-center h-42 bg-white rounded-lg p-5 gap-x-4 md:w-[43.063rem] md:h-[9.438rem] lg:w-[45.625rem]">
         <UpvoteButton
           votes={upvotes}
           votedOn={votedOnState}
@@ -83,16 +83,18 @@ export const FeedbackItem = ({
           <p className="font-bold text-feedback_title">{upvotes}</p>
         </div> */}
 
-        <div className="flex flex-col gap-2 ">
-          <h1 className="font-bold text-feedback_title">{title}</h1>
-          <p className="text-feedback_paragraph text-sm font-normal w-[40ch]">
-            {details}
-          </p>
-
-          <div className="bg-background_body w-[6.938rem] h-[1.875rem] flex items-center justify-center rounded-[0.55rem]">
-            <p className="text-sm font-bold text-feedback_tag capitalize">
-              {catogory.toLocaleLowerCase()}
+        <div className="mr-auto ml-12">
+          <div className="flex flex-col gap-2 ">
+            <h1 className="font-bold text-feedback_title">{title}</h1>
+            <p className="text-feedback_paragraph text-sm font-normal w-[40ch]">
+              {details}
             </p>
+
+            <div className="bg-background_body w-[6.938rem] h-[1.875rem] flex items-center justify-center rounded-[0.55rem]">
+              <p className="text-sm font-bold text-feedback_tag capitalize">
+                {catogory.toLocaleLowerCase()}
+              </p>
+            </div>
           </div>
         </div>
         <Link href={"/details/" + id}>

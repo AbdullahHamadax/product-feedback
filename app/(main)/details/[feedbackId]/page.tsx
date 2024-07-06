@@ -28,7 +28,7 @@ export default async function feedbackDetails({ params }: FeedbackIdProp) {
 
   return (
     <div className="flex flex-col gap-5 md:gap-0 font-jost">
-      <div className="flex justify-between m-8 mb-5 ">
+      <div className="flex justify-center m-8 mb-5 items-center lg:gap-[33rem] md:gap-[31rem] gap-[7rem] ">
         <div className="flex items-center gap-4">
           <GoBackButton />
         </div>
@@ -49,7 +49,7 @@ export default async function feedbackDetails({ params }: FeedbackIdProp) {
           votes={feedback.upvotes}
         ></FeedbackItem>
 
-        <div className="bg-white w-[20.438rem] p-5 h-[52.313rem] md:w-[43.063rem] md:h-[46.688rem] rounded-lg">
+        <div className="bg-white w-[20.438rem] p-5 h-[52.313rem] md:w-[43.063rem] md:h-[46.688rem] lg:w-[45.625rem] lg:h-[46.688rem] rounded-lg ">
           <p className="text-lg font-bold text-feedback_title">4 Comments</p>
           <div className="flex items-center justify-between">
             <div className="flex gap-4 mt-5">
@@ -150,17 +150,17 @@ export default async function feedbackDetails({ params }: FeedbackIdProp) {
           </p>
         </div>
 
-        <div className="bg-white w-[20.438rem] h-[14.625rem] md:w-[43.063rem] md:h-[15.375rem] rounded-lg flex flex-col p-5 gap-5">
+        <div className="bg-white w-[20.438rem] h-[14.625rem] md:w-[43.063rem] md:h-[15.375rem] lg:w-[45.625rem] rounded-lg flex flex-col p-5 gap-5">
           <p className="text-lg font-bold text-feedback_title">Add Comment</p>
           <div className="flex items-center justify-center">
             <input
               type="text"
-              className="bg-background_body w-[17.438rem] h-[5rem] md:w-[38.938rem] rounded-md px-5 pb-5 focus:border-feedback_tag"
+              className="bg-background_body w-[17.438rem] h-[5rem] md:w-[38.938rem] lg:w-[41.5rem] rounded-md px-5 pb-5 focus:border-feedback_tag"
               placeholder="Type your comment here"
             />
           </div>
 
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between mr-3">
             <p className="text-feedback_paragraph">250 Characters left</p>
             <button className="bg-add_feedback_button w-[7.438rem] h-[2.5rem] rounded-lg text-white text-center font-bold text-sm hover:bg-add_feedback_button_hover">
               Post Comment
