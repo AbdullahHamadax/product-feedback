@@ -14,7 +14,7 @@ export default async function Home() {
   const profile = await initialProfile();
 
   return (
-    <main className="relative md:flex md:flex-col md:items-center min-h-screen w-screen md:p-6 bg-background_body font-jost ">
+    <main className="relative md:flex md:flex-col md:items-center min-h-screen w-screen md:p-6 bg-background_body font-jost  ">
       <Image
         src={GradientBackgroundMobile}
         alt="Gradient background"
@@ -60,7 +60,7 @@ export default async function Home() {
         </h1>
         <Sidebar />
       </div>
-      <div className="bg-suggestions_bar w-screen h-[3.5rem] md:rounded-lg md:w-[43.063rem] md:h-[4.5rem] flex items-center text-sm justify-between p-4 text-white">
+      <div className="bg-suggestions_bar w-screen h-[3.5rem] md:rounded-lg md:w-[43.063rem] md:h-[4.5rem] lg:w-[51.563rem] flex items-center text-sm justify-between p-4 text-white">
         <div className="flex gap-5 items-center">
           <Image
             src={SuggestionsIcon}
@@ -85,7 +85,7 @@ export default async function Home() {
       </div>
 
       <div
-        className="flex flex-col items-center justify-center gap-4 p-7"
+        className="flex flex-col items-center justify-center gap-4 p-7 "
         id="mainview"
       >
         <FeedbackList />
