@@ -24,7 +24,7 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { createFeedback } from "@/actions/feedback";
-import { feedbackFormSchema } from "@/lib/types";
+import { feedbackFormSchema } from "@/lib/schemas";
 import { useToast } from "@/components/ui/use-toast";
 import { ToastAction } from "@/components/ui/toast";
 import { useRouter } from "next/navigation";
