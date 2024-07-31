@@ -9,7 +9,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     if (type === 'user.created') {
       try {
-        await initialProfile(data.id);  // Pass user ID to initialProfile function
+        await initialProfile();  // Pass user ID to initialProfile function
         res.status(200).json({ message: 'Profile created' });
       } catch (error) {
         console.error('Error creating profile:', error);

@@ -47,6 +47,7 @@ export default async function feedbackDetails({ params }: FeedbackIdProp) {
           details={feedback.detail}
           catogory={feedback.category}
           votes={feedback.upvotes}
+          votedOn={true} // TODO: actually handle the logic here and also please ffs redo this part, bcs this is a7a
         ></FeedbackItem>
 
         <div className="bg-white w-[20.438rem] p-5 h-[52.313rem] md:w-[43.063rem] md:h-[46.688rem] lg:w-[45.625rem] lg:h-[46.688rem] rounded-lg ">

@@ -10,7 +10,7 @@ import GradientBackgroundTablet from "@/public/assets/suggestions/tablet/backgro
 import GradientBackgroundMobile from "@/public/assets/suggestions/mobile/background-header.png";
 import { initialProfile } from "@/lib/create-profile";
 
-export default async function Home() {
+export default async function Home() { 
   const profile = await initialProfile();
 
   return (
