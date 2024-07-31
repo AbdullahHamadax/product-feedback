@@ -60,6 +60,7 @@ const config = {
         feedback_tag: "var(--feedback-tag)",
         feedback_paragraph: "var(--feedback-paragraph)",
         feedback_upvote: "var(--feedback-upvote)",
+        feedback_tag_card: "var(--feedback-tag-card)",
         feedback_tag_card_hover: "var(--feedback-tag-card-hover)",
         add_feedback_button: "var(--add-feedback-button)",
         add_feedback_button_hover: "var(--add-feedback-button-hover)",
