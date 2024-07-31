@@ -52,22 +52,22 @@ export default async function Home() {
             />
           </div>
           <div className="bg-white w-[13.938rem] h-[11.125rem] rounded-lg text-center p-6 flex flex-wrap gap-2 ">
-            <div className="w-[3rem] h-[1.875rem] bg-feedback_tag_card rounded-xl text-feedback_tag hover:text-white hover:bg-feedback_tag cursor-pointer font-bold flex items-center justify-center  ">
+            <div className="w-[3rem] h-[1.875rem] bg-feedback_tag_card rounded-xl text-feedback_tag hover:bg-feedback_tag_card_hover cursor-pointer font-bold flex items-center justify-center  ">
               All
             </div>
-            <div className="w-[3rem] h-[1.875rem] bg-feedback_tag_card rounded-xl text-feedback_tag  hover:text-white hover:bg-feedback_tag cursor-pointer  font-bold flex items-center justify-center  ">
+            <div className="w-[3rem] h-[1.875rem] bg-feedback_tag_card rounded-xl text-feedback_tag hover:bg-feedback_tag_card_hover cursor-pointer  font-bold flex items-center justify-center  ">
               UI
             </div>
-            <div className="w-[3rem] h-[1.875rem] bg-feedback_tag_card rounded-xl text-feedback_tag hover:text-white hover:bg-feedback_tag cursor-pointer  font-bold flex items-center justify-center  ">
+            <div className="w-[3rem] h-[1.875rem] bg-feedback_tag_card rounded-xl text-feedback_tag hover:bg-feedback_tag_card_hover cursor-pointer  font-bold flex items-center justify-center  ">
               UX
             </div>
-            <div className="w-[6.938rem] h-[1.875rem] bg-feedback_tag_card rounded-xl text-feedback_tag  hover:text-white hover:bg-feedback_tag cursor-pointer font-bold flex items-center justify-center  ">
+            <div className="w-[6.938rem] h-[1.875rem] bg-feedback_tag_card rounded-xl text-feedback_tag hover:bg-feedback_tag_card_hover cursor-pointer font-bold flex items-center justify-center  ">
               Enhancement
             </div>
-            <div className="w-[3.5rem] h-[1.875rem] bg-feedback_tag_card rounded-xl text-feedback_tag hover:text-white hover:bg-feedback_tag cursor-pointer  font-bold flex items-center justify-center  ">
+            <div className="w-[3.5rem] h-[1.875rem] bg-feedback_tag_card rounded-xl text-feedback_tag hover:bg-feedback_tag_card_hover cursor-pointer  font-bold flex items-center justify-center  ">
               Bug
             </div>
-            <div className="w-[4.813rem] h-[1.875rem] bg-feedback_tag_card rounded-xl text-feedback_tag hover:text-white hover:bg-feedback_tag cursor-pointer  font-bold flex items-center justify-center  ">
+            <div className="w-[4.813rem] h-[1.875rem] bg-feedback_tag_card rounded-xl text-feedback_tag hover:bg-feedback_tag_card_hover cursor-pointer  font-bold flex items-center justify-center  ">
               Feature
             </div>
           </div>
