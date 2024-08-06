@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import ArrowUpIcon from "@/public/assets/shared/icon-arrow-up.svg";
 import CommentsIcon from "@/public/assets/shared/icon-comments.svg";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { upvoteFeedback } from "@/actions/feedback";
 import { useToast } from "@/components/ui/use-toast";
@@ -40,6 +40,10 @@ export const FeedbackItem = ({
     window.addEventListener("resize", updateWindow);
     return () => window.removeEventListener("resize", updateWindow);
   });
+
+  useMemo(() => {
+    setDesktop(window.innerWidth > 767);
+  }, []);
 
   const upvote = async () => {
     if (votedOnState) setUpvotes(upvotes - 1);
