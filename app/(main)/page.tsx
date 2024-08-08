@@ -81,7 +81,10 @@ export default async function Home() {
           <div className="bg-white w-[13.938rem] h-[11.125rem]  rounded-lg lg:w-[15.938rem] ">
             <div className="flex items-center justify-between p-6  ">
               <h1 className="text-xl font-bold text-feedback_title">Roadmap</h1>
-              <a href="#" className="font-bold underline text-feedback_tag">
+              <a
+                href="/roadmap"
+                className="font-bold hover:underline text-feedback_tag"
+              >
                 View
               </a>
             </div>
